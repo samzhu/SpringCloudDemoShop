@@ -17,7 +17,7 @@ import java.util.List;
 @FeignClient(name = "order-service")
 public interface OrderReader {
 
-    @RequestMapping(method = RequestMethod.POST, value = "/api/order")
+    @RequestMapping(method = RequestMethod.POST, value = "/api/order", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     UserOrder create(ShopCart shopCart);
 
     @RequestMapping(method = RequestMethod.GET, value = "userorder/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
